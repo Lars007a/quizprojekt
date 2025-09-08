@@ -11,7 +11,7 @@ export default function quizPage({}) {
 
   const questionLimit = 2; //Hvor mange spørgsmål der skal svares på.
   const [currentQuestion, setCurrentQuestion] = useState(1); //Hvilket spørgsmål mn er i gang med, ud af questionLimit variablen.
-  const [showWhereToNext, setShowWhereToNext] = useState(false); //Om siden med hvor man skal gå hen når færdig skal vises.
+  const [showWhereToNext, setShowWhereToNext] = useState(false); //Om siden med hvor man skal gå hen når færdig med de 2 spørgsmål skal vises.
 
   return (
     <>

@@ -19,11 +19,7 @@ export default function quizForm({
   const [quizData, setQuizData] = useState(null); //Dataen om quizen fra api'en.
 
   const [quizError, setQuizError] = useState(null); //Hvis der sker en fejl i at sende svaret til api'en, osv.
-  /* const [nextLocation, setNextLocation] = useState(null); //Den næste quiz i rækkefølgen. */
   const [user, setUser] = useLocalStorage("user", null); //Til at få brugeren.
-
-  /*   const [cantGuessHint, setCantGuessHint] = useState(null); //Hint til hvis man ikke kan gætte.
-   */
 
   const [btnLink, setBtnLink] = useState(null);
   const [btnText, setBtnText] = useState("Svar");
