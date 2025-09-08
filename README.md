@@ -10,4 +10,4 @@
 
 Meningen er, at QR koden så skal have et link til mit første spørgsmål, i form af /quiz/:quizID, og så have mit andet spørgsmål komme direkte derefter.
 
-Link: https://lars007a.github.io/quizprojekt/quiz/68b6bbbdbdc505969f25ff65
+Link: https://lars007a.github.io/quizprojekt/quiz/68bebbc66e35789ca4cd404f (mit første spørgsmål, mit andet skulle gerne komme direkte bagefter.).
