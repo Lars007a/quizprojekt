@@ -9,3 +9,5 @@
 - Hvis man er på det sidste spørgsmål, ville man blive sendt til /done, hvor man ville få at vide, hvor mange svar man har svaret på, samt hvor mange korrekte man har haft.
 
 Meningen er, at QR koden så skal have et link til mit første spørgsmål, i form af /quiz/:quizID, og så have mit andet spørgsmål komme direkte derefter.
+
+Link: https://lars007a.github.io/quizprojekt/
