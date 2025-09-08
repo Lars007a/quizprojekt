@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --bc-color: #14b8a6;
+  --text-color: #1f2937;
+  --box-color: #f9f9f9;
+  --highlight-color-correct: #3db569;
+  --highlight-color-correct-hover: #2e9353;
+  --btn-text-color: #f9f9f9;
+  --highlight-color-wrong: #ef4444;
+  --input-field-focus-stroke: #ccc;
+  --radio-box-color: #eeeeee;
+  --radio-box-color: #dae8e9;
+  --textfield-color: #f6f6f6;
+  --placeholder-color: #9ca3af;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--text-color);
+}
+
+p,
+label,
+span {
+  font-weight: 300;
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+button,
+input {
+  font-size: 16px;
+}
+
+.container {
+  width: min(calc(100% - 5rem), 1200px);
+  margin-block: 0;
+  margin-inline: auto;
+}
+
+body {
+  background-color: var(--bc-color);
+}
+
+body.animate {
+  animation-timing-function: ease-in-out;
+  animation-duration: 15s;
+  animation-name: bc;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bc {
+  0% {
+    background-color: var(--bc-color);
+  }
+
+  20% {
+    background-color: #34d399;
+  }
+
+  40% {
+    background-color: #0ea5e9;
+  }
+
+  60% {
+    background-color: #22d3ee;
+  }
+
+  80% {
+    background-color: #6366f1;
+  }
+
+  100% {
+    background-color: var(--bc-color);
+  }
+}

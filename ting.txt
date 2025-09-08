@@ -1,0 +1,146 @@
+- login, skal være enig om det på klassen.
+	- men skal være med.
+- eventuelt samme backend, som vi alle skal bruge? (blev læren enig om).
+	- 
+- Hvis vi dropper tid og login, så uden login.
+	- Login med hurtigt at skrive sit navn.
+	- eventuelt deltagerliste i db'en? (blev læren enig med til sidst).
+- mobile first, siden mobil eftersom qr koder.
+
+- lav figma (design), backend (laver vi selv samlet) og frontend.
+
+
+- serveren bliver lavet sammen med de andre (4 personer, måske flere), og så lægger Anne (en af lærene) den op, så vi bare kan bruge den, så det der er individuelt er frontend og design.
+- spørgsmål er lavet og er på teams chat, og er lavet sammen i flokken på 4, med input for læren.
+- skal vise 2 spørgsmål.
+- den der, der viser hvor man skal gå hen, den skal være til aller sidst, når alle "mine" spørgsmål er svaret, og skal inkludere hintet fra sidste spørgsmål går jeg ud fra.
+- andre informationer omkring spørgsmålene, samt placeringerne er i 
+
+
+
+dagen med 4 fik vi redefineret opgaven, lavet nogle spørgsmål, og startet design, nogle (ikke mig) startede på fælles server.
+
+
+
+
+
+
+Spørgsmål:
+1. Hvor mange uddannelser er der på skolen?
+	- 2
+	- 3 (korrekt)
+	- 4
+2. Hvor gammel er skolen?
+	- 37 (korrekt)
+	- 24
+	- 46
+3. Hvad underviser Kim von Domarus i?
+	- Web-uddannelsen.
+	- Film- og TV uddannelsen.
+	- Fotograf-uddannelsen. (korrekt).
+4. Hvad er fornavnet på vores rektor?
+	- Mads. (korrekt).
+	- Bent.
+	- Bertel.
+5. Hvad hed skolen før den hed Medieskolerne?
+	- Filmskolen.
+	- Videoskolen (korrekt)
+	- Viborg Teknisk Skole.
+6. Hvornår startede webudvikler uddannelsen på skolen?
+	- 2007.
+	- 2005 (korrekt).
+	- 2010.
+7. Hvor mange elever går der på skolen?
+	- 176 (korrekt).
+	- 323.
+	- 257.
+8. Hvad er skolens adresse?
+	- Bøgevej 11, 8800 Viborg.
+	- Skovbrynet 5, 8800 Viborg.
+	- Skaldehøjvej 2, 8800 Viborg. (korrekt)
+9. Hvornår startede fotografuddannelsen på skolen?
+	- 1993 (korrekt)
+	- 1990.
+	- 1995.
+10. Hvor stor er skolen i kvm.
+	- 5300kvm
+	- 7400kvm
+	- 8500kvm.
+
+
+
+
+
+- ændre border på loginfield.
+- ændre grøn farve til en mørkere farve?
+- lav det sådan, at når man går ind på quiz siden, så tjekker man om man er logget ind, hvis man er:
+	- så viser man spørgsmålet fra url'et.
+	- hvis man ikke er, så beder man om at logge ind, og så bliver spørgsmålet vist.
+		- dette fungere gennem en state, der der bliver ændret gennem en useEffect? Som holder styr på, hvilken side der skal vises.
+- måske ha en errorbox, der kan komme frem? Hvis en errorstate bliver sand?
+- kunne måske lave svarmulighederne i deres egne bokse?
+
+- skal lave hint og error ting.
+
+
+- Måske når man svare forkert første gang, så et hint? Og så hvis man svare forkert, igen, så hvis forkert, og så videre igen.
+- Måske animationer, med fade in and out, osv, undersøg dette.
+- måske gør sådan, at baggrunden skifter farver? langsomt?
+
+- fiks shake error tekst, så at den shaker, når der bare sker en ændring, måske via timers, der sletter classen?
+- måske en animation med en side, login eller andet, der bare flyver ud fra siden? Når man åbner? Kan nemt lavet med keyframes, og måske slåes til eller fra med jsx props?
+- måske on success knap animation keyframes bliver sadt til box, med at den skal flyve væk i den ene side?
+- find en bedre måde med errortext at få animationen til at køre igen, virkelig.
+- for at vide hvornår hint skal tjekkes, måske bare en state i mainpage, der bliver passed til quizform, og som den manipulere, og tjekker, og som frontpage også tjekker, og når den rammer, 2, så siger den, at vi viser hintsiden.
+- for hint, måske gemme det korrekte svar i en state, og så ha en funktion der kan køre det til ***.
+
+
+- måske optimere det, med at sige, quizcount til questionLimit, og måske ikke state?, og tjek hvis undefined næste spørgsmål, så hvis en side med, du er færdig med alle spørgsmål. Måske længde istedet.
+- 
+
+
+fik svar på det om login, det hele bliver sat sammen i et eller andet samlet noget, med en frontend og en backend vidst, tror jeg han sagde noget om i torsdag den 4.
+så derfor skal jeg ikke noget specielt i forhold til hvordan jeg håndtere login.
+
+
+
+
+
+til statusmøde:
+- spørg om hvad når man logger ind, skriver sit navn ind:
+	- og man poster til dette endpoint /user.
+	- og der er en bruger.
+	- skal man så, bare komme ind som den bruger, eller skal man blive vist en fejl?
+	- det er mit spørgsmål.
+- vis animationer, valgte jeg at arbejde med.
+- lavet lidt på login.
+- hvis spørger, hvad bagefter:
+	- så sig, kan bedst lide at få en opgave, istedet for selv at skulle finde på en.
+
+
+
+//Måske gør sådan at flere ting skifter farve????
+//Knapper, borders, etc, etc? Ligesom baggrunden?
+
+
+ //break stopper loopet helt, continue ville bare stoppe denne interation og gå videre til den næste.
+
+
+
+For at få sat op til ny API:
+ få ny api med.
+ gem jwt token decoded når logger ind i localstorage, men decoded (bruger ikke JWT eller authtoken i header), også selvom han siger det? Eller ikke, søg op.
+	Istedet for at have det bare gemt direkte som tekst.
+Bare have næste hint være statisk tekst, med mindre der kommer noget i db'en der kommer med en tekst, om hvor man skal gå hen, hvilket ikke ser sådan ud. 
+gør det samme i quiz, med hele alle quizen og find næste, og tilføj færdig side som næste side, hvis ikke flere, måske ændre nextQuiz til nextpage, og bare have hele linket deri, hvilket kunne være "/done" eller "quiz/quizid", med en simpel ternary. ny side, og hvis den sidste.
+Cleanup kode. 
+ -
+ spørg på mandag om projektet skal kobles op til Annes API?
+ måske tilføj en backup server til mit github projekt?
+
+
+
+
+
+ mangler rigtig respons,
+ mangler til siden, hvor man skal gå hen næste gang.

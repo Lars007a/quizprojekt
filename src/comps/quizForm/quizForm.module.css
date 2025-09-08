@@ -1,0 +1,74 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  > div.boxy {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    width: 100%;
+    background-color: var(--radio-box-color);
+    padding-block: 12px;
+    padding-inline: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    transition: border 0.2s, background-color 0.2s, color 0.2s;
+
+    &.green {
+      background-color: var(--highlight-color-correct);
+      color: var(box-color);
+    }
+
+    &.red {
+      background-color: var(--highlight-color-wrong);
+      color: var(box-color);
+    }
+
+    > label {
+    }
+  }
+
+  > div input[type="radio"] {
+    accent-color: var(--bc-color);
+    cursor: pointer;
+
+    appearance: none;
+    height: 18px;
+    width: 18px;
+    background-color: transparent;
+    border: 2px solid var(--bc-color);
+    border-radius: 100%;
+
+    /* inline med andre ting og som block element. */
+    display: inline-block;
+
+    /* center den vertikelt, op og ned. */
+    margin: auto 0;
+
+    /* gør input en flex, så at ::after elementet kommer i midten. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      /* mindre end parrent cirkel */
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      background-color: var(--bc-color);
+      /* ikke vis elementet, men når bliver vist ha en transition. */
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    &:checked::after {
+      /* vis elementet når knappen bliver trykket. */
+      opacity: 1;
+    }
+  }
+}
