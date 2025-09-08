@@ -19,7 +19,9 @@ export default function quizPage({}) {
         <LoginForm /> /* hvis login siden, hvis brugeren ikke er logget ind */
       ) : showWhereToNext ? (
         <Hint
-          text={"Hint til hvor du skal finde den næste!"}
+          text={
+            "Hint til hvor du skal finde den næste! Gå hen til Bla bla bla bla, og derefter bla bla bla, og så ville du finde en QR kode ved bla bla bla."
+          }
         /> /* bruger fixed tekst, og ikke dynamisk, eftersom API'en ikke giver noget dynamisk tekst tilbage. */
       ) : (
         <QuizForm

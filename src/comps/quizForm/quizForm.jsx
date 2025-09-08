@@ -120,7 +120,8 @@ export default function quizForm({
             }`
           );
         } else {
-          setBtnLink(null);
+          setBtnLink(null); //Hvis der ikke er noget link, ville btn component
+          //sætte state variablen der visser hvor man skal gå hen næste gang til true.
           return;
         }
       })
@@ -158,7 +159,7 @@ export default function quizForm({
 
             <Button
               text={btnText}
-              type={"submit"}
+              type={btnText == "Videre" ? "button" : "submit"}
               link={btnLink}
               onClickExtra={() => {
                 if (btnText == "Videre" && !btnLink) {
