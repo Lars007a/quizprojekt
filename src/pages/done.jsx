@@ -39,9 +39,9 @@ export default function quizPage({}) {
         <p className={styles.text}>Du er færdig med quizzen!</p>
         <p className={styles.text}>
           Du har svaret på{" "}
-          <strong className={styles.bold}>{data?.total}</strong> spørgsmål, og
-          fået <strong className={styles.bold}>{data?.correctCount}</strong>{" "}
-          rigtig!
+          <strong className={styles.bold}>{data?.answeredCount}</strong>{" "}
+          spørgsmål, og fået{" "}
+          <strong className={styles.bold}>{data?.correctCount}</strong> rigtig!
         </p>
         {error && <ErrorText error={error} />}
       </Box>
