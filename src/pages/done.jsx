@@ -25,7 +25,7 @@ export default function quizPage({}) {
       .catch((error) => {
         setError(error.message);
       });
-  }, []);
+  }, [user.id]);
 
   useEffect;
 

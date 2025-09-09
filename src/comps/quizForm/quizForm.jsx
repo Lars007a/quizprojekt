@@ -108,17 +108,13 @@ export default function quizForm({
 
         val.data.isCorrect != true && setQuizError("Forkert valg!");
 
-        if (currentQuestionObj.get < questionLimit) {
+        if (currentQuestionObj.get < questionLimit && !val.data.progress.done) {
           //Hvor mange quiz der skal udfyldes på siden.
           currentQuestionObj.set(currentQuestionObj.get + 1); //Et object der har hvilket spørgmål nummer vi nu er på, ud af dem der skal udfyldes.
           //Og som bliver tjekket hver gang man svarer korrekt, for at se om man har svaret på de to man skal.
-          setBtnLink(
-            `${
-              val.data.progress.done
-                ? `/done`
-                : `/quiz/${val.data.progress.nextQuizId}`
-            }`
-          );
+          setBtnLink(`${`/quiz/${val.data.progress.nextQuizId}`}`);
+        } else if (val.data.progress.done) {
+          setBtnLink(`/done`);
         } else {
           setBtnLink(null); //Hvis der ikke er noget link, ville btn component
           //sætte state variablen der visser hvor man skal gå hen næste gang til true.
