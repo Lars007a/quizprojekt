@@ -5,6 +5,7 @@ import Button from "../button/button.jsx";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { useRef, useState } from "react";
 import ErrorText from "../errorText/errorText.jsx";
+import { jwtDecode } from "jwt-decode";
 
 export default function loginForm({}) {
   const [user, setUser] = useLocalStorage(
@@ -49,11 +50,31 @@ export default function loginForm({}) {
         throw new Error("Der skete en fejl. Prøv igen!");
       })
       .then((val) => {
+        return fetch(`https://quiz-tpjgk.ondigitalocean.app/signin`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: val.data.name,
+          }),
+        });
+      })
+      .then((val) => {
+        if (!val.ok || val.status != 200) {
+          throw new Error("Der skete en fejl. Prøv igen!");
+        }
+        return val.json();
+      })
+      .then((val) => {
+        if (val.status != "ok") {
+          throw new Error("Der skete en fejl. Prøv igen!");
+        }
         console.log(val);
-        setUser({
-          name: val.data.name,
-          id: val.data._id,
-        }); /* brugeren blev lavet. Bare gem dem i localstorage. Ser ikke ud til der er noget jwt eller noget. */
+
+        const acc = jwtDecode(val.data.token);
+
+        setUser({ token: val.data.token, id: acc._id });
       })
       .catch((error) => {
         inputRef.current.classList.add(`${styles.errorField}`);

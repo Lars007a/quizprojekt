@@ -12,7 +12,11 @@ export default function quizPage({}) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`https://quiz-tpjgk.ondigitalocean.app/quiz/progress/${user?.id}`)
+    fetch(`https://quiz-tpjgk.ondigitalocean.app/quiz/progress/${user?.id}`, {
+      headers: {
+        authorization: `Bearer ${user.token}`,
+      },
+    })
       .then((val) => {
         if (!val.ok) {
           throw new Error("Der skete en fejl!");
@@ -20,14 +24,13 @@ export default function quizPage({}) {
         return val.json();
       })
       .then((val) => {
+        console.log(val);
         setData(val.data);
       })
       .catch((error) => {
         setError(error.message);
       });
   }, [user.id]);
-
-  useEffect;
 
   return (
     <>

@@ -36,6 +36,7 @@ export default function quizForm({
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        authorization: `Bearer ${user.token}`,
       },
     })
       .then((val) => {
@@ -77,6 +78,7 @@ export default function quizForm({
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        authorization: `Bearer ${user.token}`,
       },
       body: JSON.stringify({
         optionId: answer,
