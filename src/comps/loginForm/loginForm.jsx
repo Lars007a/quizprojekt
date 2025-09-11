@@ -23,7 +23,7 @@ export default function loginForm({}) {
 
     const form = new FormData(event.target);
 
-    fetch("https://quiz-tpjgk.ondigitalocean.app/user", {
+    fetch("https://quiz-tpjgk.ondigitalocean.app/api/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export default function loginForm({}) {
         throw new Error("Der skete en fejl. Prøv igen!");
       })
       .then((val) => {
-        return fetch(`https://quiz-tpjgk.ondigitalocean.app/signin`, {
+        return fetch(`https://quiz-tpjgk.ondigitalocean.app/api/signin`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

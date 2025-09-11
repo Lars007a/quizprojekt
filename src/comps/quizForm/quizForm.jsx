@@ -32,7 +32,7 @@ export default function quizForm({
     setLoadingError(false);
     setQuizError(null);
 
-    fetch("https://quiz-tpjgk.ondigitalocean.app/quiz", {
+    fetch("https://quiz-tpjgk.ondigitalocean.app/api/quiz", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -74,7 +74,7 @@ export default function quizForm({
       return;
     }
 
-    fetch(`https://quiz-tpjgk.ondigitalocean.app/quiz/${quizID}/answer`, {
+    fetch(`https://quiz-tpjgk.ondigitalocean.app/api/quiz/${quizID}/answer`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

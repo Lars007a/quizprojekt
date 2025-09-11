@@ -12,11 +12,14 @@ export default function quizPage({}) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`https://quiz-tpjgk.ondigitalocean.app/quiz/progress/${user?.id}`, {
-      headers: {
-        authorization: `Bearer ${user.token}`,
-      },
-    })
+    fetch(
+      `https://quiz-tpjgk.ondigitalocean.app/api/quiz/progress/${user?.id}`,
+      {
+        headers: {
+          authorization: `Bearer ${user.token}`,
+        },
+      }
+    )
       .then((val) => {
         if (!val.ok) {
           throw new Error("Der skete en fejl!");
